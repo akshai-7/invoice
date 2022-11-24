@@ -1,3 +1,4 @@
+
 <?php
 
 $conn= mysqli_connect('localhost','root','','id');
@@ -8,7 +9,7 @@ $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 
     $id=$row['id'];     
-    $Itemcode = $row['Itemcode'];
+    
     $Productname = $row['Productname'];
     $Quantity = $row['Quantity'];
     $Productprice = $row['Productprice'];
@@ -58,14 +59,7 @@ $row=mysqli_fetch_assoc($result);
     </header>
     <div class="parent">
         <form action="insert.php" class="form" method="GET">
-            <div class="form-group row my-3">
-                <label for="colFormLabelSm" class=" col-sm-4 col-form-label col-form-label-sm ">
-                <h4>Itemcode</h4>
-                </label>
-                <div class="col-sm-8">
-                <input type="text" name="itemcode" class="form-control border border-dark bg-transparent" autocomplete="off" required  value=<?php echo $Itemcode;?>>
-                </div>
-            </div>
+            
             <div class="form-group row my-3">
                 <label for="colFormLabelSm" class=" col-sm-4 col-form-label col-form-label-sm">
                 <h4>Prouductname</h4>
@@ -99,7 +93,7 @@ $row=mysqli_fetch_assoc($result);
                 <thead class="header">
                     <tr class="text-white bg-dark">
                     <th scope="col">S.NO</th>
-                    <th scope="col">Itemcode</th>
+                    
                     <th scope="col">Productname</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Productprice</th>

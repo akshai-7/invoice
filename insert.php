@@ -6,12 +6,12 @@ if(isset($_GET['submit'])){
     {
 
 
-        $Itemcode = $_GET['itemcode'];
+       
         $Productname = $_GET['productname'];
         $Quantity = $_GET['quantity'];
         $Productprice = $_GET['productprice'];
        
-        $sql=mysqli_query($conn,"INSERT INTO  cart VALUES(NULL,'$Itemcode','$Productname','$Quantity','$Productprice')");
+        $sql=mysqli_query($conn,"INSERT INTO  cart VALUES(NULL,'$Productname','$Quantity','$Productprice')");
         if($sql)
         {
             // echo"Fruit Saved";

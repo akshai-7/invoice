@@ -10,7 +10,6 @@ $result=mysqli_query($conn,$sql);
     
 
 $id=$row['id'];    
-$Itemcode = $row['Itemcode'];
 $Productname = $row['Productname'];
 $Quantity = $row['Quantity'];
 $Productprice = $row['Productprice'];
@@ -21,17 +20,15 @@ $Total=$row['Productprice']*$row['Quantity'];
   <?php
     echo '<tr><th scope="row">'.$id.'</th>
     
-    <td>'.$Itemcode.'</td>
+
     <td>'.$Productname.'</td>
     <td>'.$Quantity.'</td>
     <td>'.$Productprice.'</td>
     <td>'.$Total.'</td>
     
-
     <td>
     
     <button class="btn btn-info"> <a href="update.php? updateid='.$id.'" class="text-white " >U</a></button>
-
     <button class="btn btn-danger"> <a href="delete.php? deleteid='.$id.'" class="text-white">X</a></button></td>
     
    
