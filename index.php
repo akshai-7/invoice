@@ -14,18 +14,19 @@ $conn= mysqli_connect('localhost','root','','id');
 </head>
 <body>
 <header>
-    <form action="index.php" method="post" >
+    <form action="paid.php" method="POST" >
       <div class="navbar">
         <a class="text-white" href="#"> BillNum <input type="number" name="BillNum"></a>
         <a class="text-white" href="#"><i class="fa fa-fw fa-user"></i> CustomerName <input type="text" name="CustomerName" > </a>
         <a class="text-white" href="#"><i class="fa fa-fw fa-phone"></i> Contact <input type="text" name="Contact"> </a>
-        <a  class="text-white" href="#"><i class="fa-regular fa-calendar-days"></i> Date <input type="date" name="fDate"> </a>
-        <button class="btn btn-info" name="submit" type="submit"><a  class="text-white" href="submit.php" name="submit"><i class="fa fa-fw fa-send my-1 col-sm-2 primary"></i> Submit </a></button>
+
+        <input type="submit" name="paid" value="submit" class= "bg-primary text-white col-sm-1 p-1" >
+        <button class="btn btn-primary"><a  class="text-white" href="invoice.php" name="submit"><i class="fa fa-fw fa-send "></i> Invoice</a></button>
       </div>
     </form>
     </header>
     <div class="parent">
-        <form action="insert.php" class="form" method="GET">
+        <form action="insert.php" class="form" method="POST">
             
             <div class="form-group row my-3">
                 <label for="colFormLabelSm" class=" col-sm-4 col-form-label col-form-label-sm">
@@ -75,20 +76,29 @@ if(isset($_GET['submit'])){
 ?>
          
           <div class="box" >
-                <table class="table table-transparent table-striped overflow-hidden" #id=table>
+                <table class="table table-transparent table-striped overflow-hidden sticky-top  table table-hover" #id=table>
                 <thead class="header">
                     <tr class="text-white bg-dark">
                     <th scope="col">S.NO</th>
-                 
                     <th scope="col">Productname</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Productprice</th>
                     <th scope="col">Total</th>
                     <th scope="col">Operations</th>
-                    </tr>    
+                    </tr> 
+                    <?php include'getdata.php'?> 
                 </thead>
                 <tbody>
-    <?php include'getdata.php'?>
+                <tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<!-- <td class="no-line"></td> -->
+    								<td class="no-line text-center"><strong> GrandTotal</strong></td>
+    								<!-- <td class="no-line text-right">$685.99</td> -->
+                                    <td class="no-line"></td>
+    				</tr>   
+    
                 </tbody>
                 </table>
             </div>
@@ -97,6 +107,7 @@ if(isset($_GET['submit'])){
     </div>  
     <?php include'delete.php'?> 
     <?php include'update.php'?> 
+    <?php include'login.php'?> 
      
 </body>
 </html>

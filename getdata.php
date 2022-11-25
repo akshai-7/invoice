@@ -10,14 +10,24 @@ $result=mysqli_query($conn,$sql);
     
 
 $id=$row['id'];    
+
 $Productname = $row['Productname'];
 $Quantity = $row['Quantity'];
 $Productprice = $row['Productprice'];
 //$Total=$Productprice * $Quantity;
 $Total=$row['Productprice']*$row['Quantity'];
+// $GrandTotal +=$row['$total'];
+
+
+
+// $GrandTotal = "select sum($total) from cart";
+// echo " <td>'.$GrandTotal.'</td> ";
+
+
  
   ?>
   <?php
+
     echo '<tr><th scope="row">'.$id.'</th>
     
 
@@ -25,6 +35,8 @@ $Total=$row['Productprice']*$row['Quantity'];
     <td>'.$Quantity.'</td>
     <td>'.$Productprice.'</td>
     <td>'.$Total.'</td>
+  
+    
     
     <td>
     
@@ -33,6 +45,7 @@ $Total=$row['Productprice']*$row['Quantity'];
     
    
     </tr>';
+   
  }
 }else{
 echo "not working";
