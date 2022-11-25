@@ -19,7 +19,7 @@
                 </div>
         <div class="col-xs-8">
     		<div class="date">
-    			<h5 class="pull-right">DATE:<input type="date"></h5>
+    			<h5 class="pull-right">DATE:<input type="date" class="border border-0"></h5>
     		</div>
     		
     		<div class="row">
@@ -59,7 +59,7 @@
     	<div class="col-md-5">
     		<div class="">
     			<div class="panel-heading">
-                    <h4>Order summary</h4>
+                    <h4>Summary</h4>
     			</div>
     			<div class="">
     				<div class="table">

@@ -36,7 +36,7 @@ if(isset($_POST['paid'])){
         $sql=mysqli_query($conn,"INSERT INTO  detail VALUES(NULL,'$BillNum','$CustomerName','$Contact')");
         if($sql)
         {
-            // echo"Fruit Saved";
+            echo"Data Saved";
         }
     }
 }

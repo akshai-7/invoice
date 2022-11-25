@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
         $sql=mysqli_query($conn,"INSERT INTO  cart VALUES(NULL,'$Productname','$Quantity','$Productprice')");
         if($sql)
         {
-            // echo"Fruit Saved";
+            echo" Data Saved";
         }
     }
 }

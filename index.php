@@ -7,7 +7,7 @@ $conn= mysqli_connect('localhost','root','','id');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Billing</title>
     <link rel="stylesheet" href="style1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,7 +76,7 @@ if(isset($_GET['submit'])){
 ?>
          
           <div class="box" >
-                <table class="table table-transparent table-striped overflow-hidden sticky-top  table table-hover" #id=table>
+                <table class="table table-transparent table-striped overflow-hidden " #id=table>
                 <thead class="header">
                     <tr class="text-white bg-dark">
                     <th scope="col">S.NO</th>
@@ -93,9 +93,9 @@ if(isset($_GET['submit'])){
     								<td class="no-line"></td>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
-    								<!-- <td class="no-line"></td> -->
+    								
     								<td class="no-line text-center"><strong> GrandTotal</strong></td>
-    								<!-- <td class="no-line text-right">$685.99</td> -->
+    								<td class="no-line text-right">000.0</td>
                                     <td class="no-line"></td>
     				</tr>   
     
@@ -107,6 +107,7 @@ if(isset($_GET['submit'])){
     </div>  
     <?php include'delete.php'?> 
     <?php include'update.php'?> 
+    
     <?php include'login.php'?> 
      
 </body>

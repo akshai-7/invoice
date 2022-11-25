@@ -1,4 +1,3 @@
-
 <?php
 
 $conn= mysqli_connect('localhost','root','','id');
@@ -19,18 +18,17 @@ $row=mysqli_fetch_assoc($result);
         $Quantity = $_POST['quantity'];
         $Productprice = $_POST['productprice'];
     
-       $sql = " UPDATE  cart set id=1,Productname='$Productname',Quantity='$Quantity',Productprice=$Productprice WHERE id = $id ";
-       $result=mysqli_query($con,$sql);
+       $sql = " UPDATE cart set Productname='$Productname',Quantity='$Quantity',Productprice=$Productprice WHERE id = $id ";
+       $result=mysqli_query($conn,$sql);
        if($result){
         // echo "Updated Succesfully";
-        header('location:index.php');
+        // header('location:index.php');
        }
        else{
         die(mysqli_error($conn));
     
        }  
     }
-
 
 ?>
 <!DOCTYPE html>
@@ -39,14 +37,14 @@ $row=mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Billing</title>
     <link rel="stylesheet" href="style1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
-    <form action="insert.php" method="POST" >
+    <form action="paid" method="POST">
       <div class="navbar">
         <a class="text-white" href="#"> BillNum <input type="number" name="BillNum"></a>
         <a class="text-white" href="#"><i class="fa fa-fw fa-user"></i> CustomerName <input type="text" name="CustomerName" > </a>
@@ -58,7 +56,8 @@ $row=mysqli_fetch_assoc($result);
     </form>
     </header>
     <div class="parent">
-        <form action="insert.php" class="form" method="POST">
+        
+        <form action="index.php" class="form" method="POST">
             
             <div class="form-group row my-3">
                 <label for="colFormLabelSm" class=" col-sm-4 col-form-label col-form-label-sm">
@@ -84,15 +83,13 @@ $row=mysqli_fetch_assoc($result);
                 <input type="text" name="productprice" class="form-control border border-dark bg-transparent " autocomplete="off" required value=<?php echo $Productprice;?>>
                 </div>
             </div>
-                <input type="submit" name="submit" value="Update" class= "bg-info col-sm-2 p-2" >
-                <!-- <button type="submit" name="submit"><input type="submit" name="submit"></button> -->
-                
+                <input type="submit" name="submit" value="Update" class= "bg-info col-sm-2 p-2" >              
         </form>
         <div class="box" >
                 <table class="table table-transparent table-striped overflow-hidden sticky-top  table table-hover" #id=table>
                 <thead class="header">
                     <tr class="text-white bg-dark">
-                    <th scope="col" value=<?php echo $Productname;?>>S.NO</th>
+                    <th scope="col">S.NO</th>
                     <th scope="col">Productname</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Productprice</th>
@@ -108,17 +105,17 @@ $row=mysqli_fetch_assoc($result);
     								<td class="no-line"></td>
     								<!-- <td class="no-line"></td> -->
     								<td class="no-line text-center"><strong> Grand Total</strong></td>
-    								<!-- <td class="no-line text-right">$685.99</td> -->
+    								<td class="no-line text-right">$000.0</td>
                                     <td class="no-line"></td>
     				</tr>   
     
                 </tbody>
                 </table>
             </div>
-         
-
+    
+            
     </div>  
 
-     
+
 </body>
 </html>
